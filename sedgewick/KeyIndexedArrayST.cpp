@@ -9,6 +9,7 @@ class ST {
       M = nullItem.key();
       st = new Item[M];
     }
+
     int count() {
       int N = 0;
       for (int i = 0; i < M; i++)
@@ -34,6 +35,7 @@ class ST {
           if (k-- == 0) return st[i];
       return nullItem;
     }
+
     void show(std::ostream& os) {
       for (int i = 0; i < M; i++)
         if (!st[i].null()) st[i].show(os);
