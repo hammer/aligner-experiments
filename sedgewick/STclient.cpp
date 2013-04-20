@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
 #include "Item.cpp"
-#include "UnorderedLinkedListST.cpp"
+#include "OrderedArraySTwithBinarySearch.cpp"
 int main(int argc, char *argv[]) {
   int N, maxN = atoi(argv[1]), sw = atoi(argv[2]);
   ST<Item, Key> st(maxN);
@@ -25,9 +25,9 @@ int main(int argc, char *argv[]) {
   std::cout << st.count() << " distinct keys" << std::endl;
 
   // Try out remove
-  //  st.remove(v);
-  //  std::cout << std::endl << "Removed key " << v.key() << std::endl;
-  //  std::cout << std::endl; st.show(std::cout); std::cout << std::endl;
-  //  std::cout << st.count() << " distinct keys" << std::endl;
+  st.remove(v);
+  std::cout << std::endl << "Removed key " << v.key() << std::endl;
+  std::cout << std::endl; st.show(std::cout); std::cout << std::endl;
+  std::cout << st.count() << " distinct keys" << std::endl;
 }
  
