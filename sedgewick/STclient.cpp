@@ -1,5 +1,3 @@
-#include <iostream>
-#include <cstdlib>
 #include "ST.h"
 
 int main(int argc, char *argv[]) {

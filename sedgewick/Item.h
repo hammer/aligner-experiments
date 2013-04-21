@@ -1,7 +1,9 @@
 #include <cstdlib>
 #include <iostream>
+
 static int maxKey = 1000;
 typedef int Key;
+
 class Item {
   private:
     Key keyval;

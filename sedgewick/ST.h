@@ -1,4 +1,3 @@
-#include <iostream>
 #include "Item.h"
 
 template <class T, class U>
