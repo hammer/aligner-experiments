@@ -1,3 +1,7 @@
+BinarySearchTreeSTclient: Item.o BinarySearchTreeST.o
+	g++ -dynamiclib -o libST.dylib -fPIC Item.o BinarySearchTreeST.o
+	g++ -o STclient STclient.cpp -L. -lST
+
 OrderedArraySTwithBinarySearchclient: Item.o OrderedArraySTwithBinarySearch.o
 	g++ -dynamiclib -o libST.dylib -fPIC Item.o OrderedArraySTwithBinarySearch.o
 	g++ -o STclient STclient.cpp -L. -lST
@@ -9,6 +13,9 @@ OrderedArraySTclient: Item.o OrderedArrayST.o
 KeyIndexedArraySTclient: Item.o KeyIndexedArrayST.o
 	g++ -dynamiclib -o libST.dylib -fPIC Item.o KeyIndexedArrayST.o
 	g++ -o STclient STclient.cpp -L. -lST
+
+BinarySearchTreeST.o: BinarySearchTreeST.cpp
+	g++ -c -fPIC BinarySearchTreeST.cpp
 
 OrderedArraySTwithBinarySearch.o: OrderedArraySTwithBinarySearch.cpp
 	g++ -c -fPIC OrderedArraySTwithBinarySearch.cpp
