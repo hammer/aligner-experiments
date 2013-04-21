@@ -1,14 +1,26 @@
-KeyIndexedArrayST: Item.cpp OrderedArrayST.cpp STclient.cpp
-	g++ Item.cpp $@.cpp STclient.cpp -o STclient
+OrderedArraySTwithBinarySearchclient: Item.o OrderedArraySTwithBinarySearch.o
+	g++ -dynamiclib -o libST.dylib -fPIC Item.o OrderedArraySTwithBinarySearch.o
+	g++ -o STclient STclient.cpp -L. -lST
 
-OrderedArrayST: Item.cpp OrderedArrayST.cpp STclient.cpp
-	g++ Item.cpp $@.cpp STclient.cpp -o STclient
+OrderedArraySTclient: Item.o OrderedArrayST.o
+	g++ -dynamiclib -o libST.dylib -fPIC Item.o OrderedArrayST.o
+	g++ -o STclient STclient.cpp -L. -lST
 
-UnorderedLinkedListST: Item.cpp UnorderedLinkedListST.cpp STclient.cpp
-	g++ Item.cpp $@.cpp STclient.cpp -o STclient
+KeyIndexedArraySTclient: Item.o KeyIndexedArrayST.o
+	g++ -dynamiclib -o libST.dylib -fPIC Item.o KeyIndexedArrayST.o
+	g++ -o STclient STclient.cpp -L. -lST
 
-OrderedArraySTwithBinarySearch: Item.cpp OrderedArraySTwithBinarySearch.cpp STclient.cpp
-	g++ Item.cpp $@.cpp STclient.cpp -o STclient
+OrderedArraySTwithBinarySearch.o: OrderedArraySTwithBinarySearch.cpp
+	g++ -c -fPIC OrderedArraySTwithBinarySearch.cpp
+
+OrderedArrayST.o: OrderedArrayST.cpp
+	g++ -c -fPIC OrderedArrayST.cpp
+
+KeyIndexedArrayST.o: KeyIndexedArrayST.cpp
+	g++ -c -fPIC KeyIndexedArrayST.cpp
+
+Item.o: Item.cpp
+	g++ -c -fPIC Item.cpp
 
 clean:
-	rm -f STclient *.o *.a *~ \#*
+	rm -f STclient *.o *.a *.dylib *.so *~ \#*

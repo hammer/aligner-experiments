@@ -1,7 +1,7 @@
 #include <iostream>
 #include <cstdlib>
-#include "Item.cpp"
-#include "OrderedArraySTwithBinarySearch.cpp"
+#include "ST.h"
+
 int main(int argc, char *argv[]) {
   int N, maxN = atoi(argv[1]), sw = atoi(argv[2]);
   ST<Item, Key> st(maxN);
